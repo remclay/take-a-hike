@@ -4,7 +4,7 @@ class CreateHikes < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :location
       t.string :difficulty
-      t.integer :rating
+      t.float :rating
       t.integer :hike_id
 
       t.timestamps
