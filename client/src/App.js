@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../App.css';
-import HikeSearch from '../HikeSearch'
-import HikesContainer from './HikesContainer'
+import './App.css';
+import HikeSearch from './HikeSearch'
+import HikesContainer from './components/HikesContainer'
 
 class App extends Component {
   render() {
