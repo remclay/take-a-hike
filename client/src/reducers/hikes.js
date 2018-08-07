@@ -13,5 +13,5 @@ const hikes = (state = [], action) => {
       return state
   }
 }
-​
+
 export default hikes
