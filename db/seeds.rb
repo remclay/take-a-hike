@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Hike.create(name: "Royal Arch Trail", location: "Boulder", difficulty: "Hard", rating: 4.5)
-Hike.create(name: "Bear Peak Trail", location: "Boulder", difficulty: "Hard", rating: 4.5)
-Hike.create(name: "Green Mountain West Trail", location: "Boulder", difficulty: "Moderate", rating: 4.5)
-Hike.create(name: "Red Rocks Trail", location: "Boulder", difficulty: "Easy", rating: 4.0)
-Hike.create(name: "Flatirons Vista Trail", location: "Boulder", difficulty: "Easy", rating: 4.0)
+user1 = User.create()
+
+hike1 = Hike.create(name: "Royal Arch Trail", location: "Boulder", difficulty: "Hard")
+hike2 = Hike.create(name: "Bear Peak Trail", location: "Boulder", difficulty: "Hard")
+hike3 = Hike.create(name: "Green Mountain West Trail", location: "Boulder", difficulty: "Moderate")
+hike4 = Hike.create(name: "Red Rocks Trail", location: "Boulder", difficulty: "Easy")
+hike5 = Hike.create(name: "Flatirons Vista Trail", location: "Boulder", difficulty: "Easy")
