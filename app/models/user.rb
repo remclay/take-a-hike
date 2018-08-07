@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-  has_many :comments
-  has_many :hikes, through: :comments
+  has_many :reviews
+  has_many :hikes, through: :reviews
 end
