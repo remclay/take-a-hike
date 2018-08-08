@@ -11,3 +11,22 @@ export function fetchHikes() {
     })
   }
 }
+
+export function addHike(hike, history) {
+  return (dispatch) => {
+    dispatch({type: 'LOADING_HIKES'});
+    return fetch('/hikes', {
+      method: 'POST',
+      headers: {
+        'Accept': "application/json",
+        'Content-Type': "application/json",
+      },
+      body: JSON.stringify(hike)
+    })
+    .then(response => response.json())
+    .then(responseJSON => {const hike = responseJSON;
+      history.push('/hikes');
+      return (dispatch({type: 'ADD_HIKE', payload: hike}))
+    })
+  }
+}
