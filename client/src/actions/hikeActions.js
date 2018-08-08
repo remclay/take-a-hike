@@ -12,7 +12,7 @@ export function fetchHikes() {
   }
 }
 
-export function addHike(hike, history) {
+export function addHike(hike) {
   return (dispatch) => {
     dispatch({type: 'LOADING_HIKES'});
     return fetch('/hikes', {
@@ -25,7 +25,6 @@ export function addHike(hike, history) {
     })
     .then(response => response.json())
     .then(responseJSON => {const hike = responseJSON;
-      history.push('/hikes');
       return (dispatch({type: 'ADD_HIKE', payload: hike}))
     })
   }
