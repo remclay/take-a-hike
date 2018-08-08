@@ -1,3 +1,6 @@
+import React from 'react';
+import Hike from './Hike';
+
 const Hikes = ({
   hikes,
   onHikeClick
@@ -12,3 +15,5 @@ const Hikes = ({
     )}
   </div>
 );
+
+export default Hikes
