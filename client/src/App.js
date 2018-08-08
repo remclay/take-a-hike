@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import HikeSearch from './HikeSearch'
 import HikesContainer from './components/HikesContainer'
 
 class App extends Component {
@@ -10,7 +9,6 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Take-a-hike</h1>
         </header>
-        < HikeSearch />
         < HikesContainer />
       </div>
     );
