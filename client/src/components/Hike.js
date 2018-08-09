@@ -14,4 +14,4 @@ const Hike = ({
   </div>
 )
 
-export default Hike
+export default Hike;
