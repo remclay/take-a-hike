@@ -7,20 +7,10 @@ import HikeForm from './HikeForm';
 
 
 class HikesContainer extends Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     hikes: []
-  //   }
-  // }
 
 componentDidMount() {
   console.log("HC mounted!")
   this.props.actions.fetchHikes()
-}
-
-onHikeClick(id) {
-  // console.log("On hike clicky")
 }
 
   render() {
@@ -29,7 +19,6 @@ onHikeClick(id) {
         <h1>Hikes</h1>
         < Hikes
           hikes={this.props.hikes}
-          onHikeClick={this.onHikeClick}
         />
         <h1>Add a new Hike</h1>
         < HikeForm />

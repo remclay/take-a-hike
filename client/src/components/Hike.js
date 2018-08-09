@@ -1,17 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Hike = ({
-  onClick,
+  id,
   name,
   location,
   difficulty
 }) => (
-  <div onClick={onClick}>
-    <h3>{name}</h3>
+  <div>
+    <h3><Link to={`/hikes/${id}`}>{name}</Link></h3>
     <h4>{location}</h4>
     <p>{difficulty}</p>
   </div>
 )
 
-// onClick to render show?
 export default Hike
