@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';
 import { addHike } from '../actions/hikeActions';
 
 class HikeForm extends Component {
@@ -29,6 +29,7 @@ class HikeForm extends Component {
   render() {
     return(
       <div>
+        <h1>Add a new Hike</h1>
         <form className="new-hike" onSubmit={this.handleSubmit}>
           Name: <input type="text" name="name" onChange={(event) => this.handleChange(event)} value={this.state.name}/><br></br>
           Location: <input type="text" name="location" onChange={(event) => this.handleChange(event)} value={this.state.location}/><br></br>

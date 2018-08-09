@@ -3,7 +3,7 @@ import fetch from 'isomorphic-fetch';
 
 export function fetchHikes() {
   return (dispatch) => {
-    dispatch({type: 'LOADING_HKES'});
+    dispatch({type: 'LOADING_HIKES'});
     return fetch('/hikes')
     .then(response => response.json())
     .then(responseJSON => {const hikes = responseJSON;
