@@ -72,3 +72,17 @@ export function deleteHike(hike) {
   )
  }
 }
+
+export function setVisibilityFilter(filter) {
+  return {
+    type: "SET_VISIBILITY_FILTER",
+    filter
+  }
+}
+
+export const VisibilityFilters = {
+  SHOW_ALL: 'SHOW_ALL',
+  SHOW_EASY: 'SHOW_EASY',
+  SHOW_MODERATE: 'SHOW_MODERATE',
+  SHOW_HARD: 'SHOW_HARD'
+}
