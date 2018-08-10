@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Hike from './Hike';
 
 const HikeShow = (props) => {
-  debugger
   return (
     <div className="hikes-container">
       <h1>Hike</h1>
@@ -14,6 +14,7 @@ const HikeShow = (props) => {
       {!props.hike.id &&
         <p>"Oops, we couldn't find that hike."</p>
       }
+      <Link to={`/hikes/${props.hike.id}/edit`}>Edit hike</Link>
     </div>
   )
 }
