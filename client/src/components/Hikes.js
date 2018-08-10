@@ -1,17 +1,15 @@
 import React from 'react';
 import Hike from './Hike';
 
-const Hikes = ({
-  hikes
-}) => (
-  <div>
+const Hikes = ({ hikes }) => (
+  <ul>
     {hikes.map(hike =>
       <Hike
         key={hike.id}
         {...hike}
       />
     )}
-  </div>
+  </ul>
 );
 
 export default Hikes

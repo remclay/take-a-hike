@@ -7,11 +7,11 @@ const Hike = ({
   location,
   difficulty
 }) => (
-  <div>
+  <li>
     <h3><Link to={`/hikes/${id}`}>{name}</Link></h3>
     <h4>{location}</h4>
     <p>{difficulty}</p>
-  </div>
+  </li>
 )
 
 export default Hike;
