@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/hikeActions';
-import Hikes from './Hikes';
+import VisibleHikes from '../containers/VisibleHikes';
 import HikeForm from './HikeForm';
+import HikeSearch from './HikeSearch';
+import Footer from './Footer';
 
 
 class HikesContainer extends Component {
@@ -15,11 +17,11 @@ componentDidMount() {
 
   render() {
     return (
-      <div className="hikes-container">
+      <div className="hikes-container"><br></br>
+        < HikeSearch /><br></br>
+        < Footer />
         <h1>Hikes</h1>
-        < Hikes
-          hikes={this.props.hikes}
-        />
+        < VisibleHikes hikes={this.props.hikes} />
       </div>
     );
   }
