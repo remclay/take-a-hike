@@ -1,5 +1,5 @@
 class HikesController < ApplicationController
-  before_action :set_hike, only: :show
+  before_action :set_hike, only: [:show, :update]
 
   # GET /hikes
   def index
@@ -15,6 +15,15 @@ class HikesController < ApplicationController
   # POST /hikes
   def create
     @hike = Hike.new(hike_params)
+    if @hike.save
+      render json: @hike
+    else
+      render json: @hike.errors
+    end
+  end
+
+  def update
+    @hike.update_attributes(hike_params)
     if @hike.save
       render json: @hike
     else
