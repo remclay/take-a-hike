@@ -12,6 +12,13 @@ export function fetchHikes() {
   }
 }
 
+export function searchHikes(searchTerm) {
+  return {
+    type: "SEARCH_HIKES",
+    payload: searchTerm
+  }
+}
+
 export function addHike(hike) {
   return (dispatch) => {
     dispatch({type: 'LOADING_HIKES'});
