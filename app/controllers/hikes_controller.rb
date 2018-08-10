@@ -1,5 +1,5 @@
 class HikesController < ApplicationController
-  before_action :set_hike, only: [:show, :update]
+  before_action :set_hike, only: [:show, :update, :destroy]
 
   # GET /hikes
   def index
@@ -7,7 +7,7 @@ class HikesController < ApplicationController
     render json: @hikes
   end
 
-  # GET /hikes/1
+  # GET /hikes/:id
   def show
     render json: @hike
   end
@@ -22,12 +22,22 @@ class HikesController < ApplicationController
     end
   end
 
+  # PUT/PATCH /hikes/:id/edit
   def update
     @hike.update_attributes(hike_params)
     if @hike.save
       render json: @hike
     else
       render json: @hike.errors
+    end
+  end
+
+  # DELETE /hikes/:id
+  def destroy
+    if @hike.destroy
+      head :no_content, status: :ok
+    else
+      render json: @hike.errors, status: :unprocessable_entity
     end
   end
 
