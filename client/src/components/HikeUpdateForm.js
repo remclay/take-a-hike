@@ -26,7 +26,7 @@ class HikeUpdateForm extends Component {
     event.preventDefault();
     console.log("Handling submit")
     this.props.updateHike(this.state);
-    // clear fields after submission
+    this.props.history.push(`/hikes/${this.props.hike.id}`)
   }
 
   render() {
