@@ -20,15 +20,12 @@ componentDidMount() {
         < Hikes
           hikes={this.props.hikes}
         />
-        <h1>Add a new Hike</h1>
-        < HikeForm />
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  // console.log(state.hikes.hikes)
   return {
     hikes: state.hikes.hikes
   }
