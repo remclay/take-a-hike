@@ -23,7 +23,8 @@ class HikeForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.addHike(this.state);
-    // clear fields after submission
+    this.props.history.push('/hikes')
+    // change redirect to hikes/:id?
   }
 
   render() {
@@ -36,7 +37,6 @@ class HikeForm extends Component {
           Difficulty: <input type="text" name="difficulty" onChange={(event) => this.handleChange(event)} value={this.state.difficulty}/><br></br>
           <input type="submit"/>
         </form>
-        {this.state.name}
       </div>
     )
   }
