@@ -15,15 +15,18 @@ class App extends Component {
         <div className="App">
           <header className="App-header">
             <h1 className="App-title">Take-a-hike</h1>
+            <p className="App-intro">Browse, upload, edit hikes in your area</p>
           </header>
           <NavBar />
-          <Route exact path='/' component={Home} />
-          <Route exact path='/hikes' component={HikesContainer} />
-          <Switch>
-            <Route path='/hikes/new' component={HikeForm} />
-            <Route path='/hikes/:id/edit' component={HikeUpdateForm} />
-            <Route path='/hikes/:id' component={HikeShow} />
-          </Switch>
+          <div className="Body">
+            <Route exact path='/' component={Home} />
+            <Route exact path='/hikes' component={HikesContainer} />
+            <Switch>
+              <Route path='/hikes/new' component={HikeForm} />
+              <Route path='/hikes/:id/edit' component={HikeUpdateForm} />
+              <Route path='/hikes/:id' component={HikeShow} />
+            </Switch>
+          </div>
         </div>
       </Router>
     );

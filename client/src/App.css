@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif
 }
 
 .App-logo {
@@ -8,21 +9,25 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: white;
+  height: 120px;
   padding: 20px;
-  color: white;
+  color: black;
+  border-radius: 10px;
+  opacity: 0.7;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2.5em;
 }
 
 .App-intro {
-  font-size: large;
+  font-size: 1.0em;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.Body {
+  /* background-color: white; */
+  padding: 20px;
+  color: black;
+  border-radius: 10px;
 }
