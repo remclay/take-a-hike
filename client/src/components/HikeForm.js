@@ -9,7 +9,8 @@ class HikeForm extends Component {
     this.state = {
       name: '',
       location: '',
-      difficulty: ''
+      difficulty: '',
+      description: ''
     };
   }
 
@@ -35,6 +36,7 @@ class HikeForm extends Component {
           Name: <input type="text" name="name" onChange={(event) => this.handleChange(event)} value={this.state.name}/><br></br>
           Location: <input type="text" name="location" onChange={(event) => this.handleChange(event)} value={this.state.location}/><br></br>
           Difficulty: <input type="text" name="difficulty" onChange={(event) => this.handleChange(event)} value={this.state.difficulty}/><br></br>
+          Description: <input type="text" name="description" onChange={(event) => this.handleChange(event)} value={this.state.description}/><br></br>
           <input type="submit"/>
         </form>
       </div>
