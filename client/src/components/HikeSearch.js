@@ -36,13 +36,9 @@ class HikeSearch extends React.Component {
             value={this.state.searchTerm}
             onChange={this.handleChange}
           />
-          <button type="submit">Search</button>
+          <button type="submit">Go</button>
           </form>
-          {this.state.searchTerm}
-          </div>
-          < Hikes
-            hikes={this.props.hikes}
-          />
+        </div>
       </div>
     );
   }
