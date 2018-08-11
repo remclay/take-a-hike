@@ -15,7 +15,6 @@ class Home extends Component {
         <p>Search: < HikeSearch /></p>
         <p>Browse by location: </p>
         <p>Can't find what you're looking for? <Link to={`/hikes/new`}>Add a new hike</Link></p>
-        <HikesContainer />
       </div>
     );
   }
