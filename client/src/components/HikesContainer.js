@@ -21,6 +21,7 @@ componentDidMount() {
         < HikeSearch /><br></br>
         < Footer />
         <h1>Hikes</h1>
+        <p>Click on a hike to see more</p>
         < VisibleHikes hikes={this.props.hikes} />
       </div>
     );

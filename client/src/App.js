@@ -15,7 +15,7 @@ class App extends Component {
         <div className="App">
           <header className="App-header">
             <h1 className="App-title">Take-a-hike</h1>
-            <p className="App-intro">Browse, upload, edit hikes in your area</p>
+            <p className="App-intro">Browse or search hikes in your area, upload new hikes you have discovered, edit or remove existing hikes, describe your experiences.</p>
           </header>
           <NavBar />
           <div className="Body">
