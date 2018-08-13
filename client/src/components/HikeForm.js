@@ -40,7 +40,7 @@ class HikeForm extends Component {
         <form className="new-hike" onSubmit={this.handleSubmit}>
           Name: <input type="text" name="name" onChange={this.handleChange} value={this.state.name}/><br></br>
           Location: <input type="text" name="location" onChange={this.handleChange} value={this.state.location}/><br></br>
-          Difficulty: <select value={this.state.value} name="difficulty" onChange={(event) => this.handleChange(event)}>
+          Difficulty: <select value={this.state.difficulty} name="difficulty" onChange={(event) => this.handleChange(event)}>
             <option value="Easy">Easy</option>
             <option value="Moderate">Moderate</option>
             <option value="Hard">Hard</option>

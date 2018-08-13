@@ -14,6 +14,9 @@ class HikeUpdateForm extends Component {
       difficulty: this.props.hike.difficulty,
       description: this.props.hike.description
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange = event => {
@@ -34,10 +37,15 @@ class HikeUpdateForm extends Component {
     return(
       <div>
         <form className="edit-hike" onSubmit={this.handleSubmit}>
-          Name: <input type="text" name="name" onChange={(event) => this.handleChange(event)} value={this.state.name}/><br></br>
-          Location: <input type="text" name="location" onChange={(event) => this.handleChange(event)} value={this.state.location}/><br></br>
-          Difficulty: <input type="text" name="difficulty" onChange={(event) => this.handleChange(event)} value={this.state.difficulty}/><br></br>
-          Description: <input type="text" name="description" onChange={(event) => this.handleChange(event)} value={this.state.description}/><br></br>
+          Name: <input type="text" name="name" onChange={this.handleChange} value={this.state.name}/><br></br>
+          Location: <input type="text" name="location" onChange={this.handleChange} value={this.state.location}/><br></br>
+          Difficulty: <select value={this.state.difficulty} name="difficulty" onChange={(event) => this.handleChange(event)}>
+            <option value="Easy">Easy</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Hard">Hard</option>
+          </select>
+          <br></br>
+          Description: <input type="text" name="description" onChange={this.handleChange} value={this.state.description}/><br></br>
           <input type="submit"/>
         </form>
       </div>
