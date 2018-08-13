@@ -13,7 +13,6 @@ const HikeShow = (props) => {
 
   return (
     <div className="hikes-show-container">
-      <h1>Hike</h1>
       < Hike
         key={props.hike.id}
         {...props.hike}
