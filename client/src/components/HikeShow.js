@@ -8,15 +8,16 @@ const HikeShow = (props) => {
 
   const handleDelete = () => {
     props.deleteHike(props.hike)
-    props.history.push('/hikes/')
+    props.history.push('/hikes')
   }
 
   return (
-    <div className="hikes-container">
+    <div className="hikes-show-container">
       <h1>Hike</h1>
       < Hike
         key={props.hike.id}
         {...props.hike}
+        display="single"
       />
       {!props.hike.id &&
         <p>"Oops, we couldn't find that hike."</p>
