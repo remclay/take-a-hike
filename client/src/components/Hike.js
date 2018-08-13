@@ -5,12 +5,16 @@ const Hike = ({
   id,
   name,
   location,
-  difficulty
+  difficulty,
+  description,
+  display
 }) => (
   <li>
-    <h3><Link to={`/hikes/${id}`}>{name}</Link></h3>
-    <h4>{location}</h4>
-    <p>{difficulty}</p>
+    <h3><Link to={`/hikes/${id}`}>{name}</Link> - {location}</h3>
+    <h4>Difficulty: {difficulty}</h4>
+    {display==="single" &&
+      <p>Description: {description}</p>
+    }
   </li>
 )
 
