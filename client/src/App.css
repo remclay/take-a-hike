@@ -3,18 +3,12 @@
   font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
-  background-color: white;
-  height: 120px;
+  background-color: rgba(255,255,255,0.7);
+  height: 100px;
   padding: 20px;
   color: black;
   border-radius: 10px;
-  opacity: 0.7;
 }
 
 .App-title {
@@ -29,5 +23,16 @@
   /* background-color: white; */
   padding: 20px;
   color: black;
+}
+
+.hikes-container .hikes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.hikes-container .hike {
+  background-color: rgba(255,255,255,0.4);
   border-radius: 10px;
+  border-color: black;
 }
