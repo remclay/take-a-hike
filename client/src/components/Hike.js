@@ -9,13 +9,14 @@ const Hike = ({
   description,
   display
 }) => (
-  <li>
-    <h3><Link to={`/hikes/${id}`}>{name}</Link> - {location}</h3>
-    <h4>Difficulty: {difficulty}</h4>
+  <div className="hike">
+    <h3><Link to={`/hikes/${id}`}>{name}</Link></h3>
+    <p>Location: {location}</p>
+    <p>Difficulty: {difficulty}</p>
     {display==="single" &&
       <p>Description: {description}</p>
     }
-  </li>
+  </div>
 )
 
 export default Hike;
