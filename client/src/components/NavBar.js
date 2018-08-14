@@ -9,23 +9,23 @@ const link = {
   width: '100px',
   padding: '12px',
   margin: '0 6px 6px',
-  background: 'blue',
+  background: 'white',
   textDecoration: 'none',
-  color: 'white',
+  color: 'black',
 }
 
 const activeLink = {
   width: '100px',
   padding: '12px',
   margin: '0 6px 6px',
-  background: 'green',
-  textDecoration: 'none',
-  color: 'white',
+  background: 'white',
+  textDecoration: 'underline',
+  color: 'black',
 }
 
 const NavBar = () => (
   <div className="navigation">
-    <NavLink to="/hikes" exact style={link} activeStyle={activeLink}>All</NavLink>
+    <NavLink to="/" exact style={link} activeStyle={activeLink}>Home</NavLink>
     <NavLink to="/hikes" exact style={link} activeStyle={activeLink}>All hikes</NavLink>
     <NavLink to="/hikes/new" exact style={link} activeStyle={activeLink}>New</NavLink>
   </div>
