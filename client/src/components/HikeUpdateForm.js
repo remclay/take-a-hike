@@ -35,7 +35,8 @@ class HikeUpdateForm extends Component {
 
   render() {
     return(
-      <div>
+      <div className="update-hike-container">
+        <h1>Edit Hike</h1>
         <form className="edit-hike" onSubmit={this.handleSubmit}>
           Name: <input type="text" name="name" onChange={this.handleChange} value={this.state.name}/><br></br>
           Location: <input type="text" name="location" onChange={this.handleChange} value={this.state.location}/><br></br>

@@ -3,8 +3,8 @@ import FilterLink from '../containers/FilterLink'
 import { VisibilityFilters } from '../actions/hikeActions'
 
 const Footer = () => (
-  <div>
-    <span>Show: </span>
+  <div className="filter-container">
+    <span>Filter by difficulty: </span>
     <FilterLink filter={VisibilityFilters.SHOW_ALL}>
       All
     </FilterLink>
