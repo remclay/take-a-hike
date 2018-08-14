@@ -29,6 +29,7 @@ class HikeSearch extends React.Component {
       <div className="search-container">
         <div className="search-form">
         <form onSubmit={this.handleSubmit}>
+          <label>Search by name: </label>
           <input
             className='searchTerm'
             type='text'

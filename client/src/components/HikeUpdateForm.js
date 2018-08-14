@@ -38,15 +38,14 @@ class HikeUpdateForm extends Component {
       <div className="update-hike-container">
         <h1>Edit Hike</h1>
         <form className="edit-hike" onSubmit={this.handleSubmit}>
-          Name: <input type="text" name="name" onChange={this.handleChange} value={this.state.name}/><br></br>
-          Location: <input type="text" name="location" onChange={this.handleChange} value={this.state.location}/><br></br>
-          Difficulty: <select value={this.state.difficulty} name="difficulty" onChange={(event) => this.handleChange(event)}>
+          <label>Name: </label><input type="text" name="name" onChange={this.handleChange} value={this.state.name}/>
+          <label> Location: </label><input type="text" name="location" onChange={this.handleChange} value={this.state.location}/><br></br><br></br>
+          <label>Difficulty: </label><select value={this.state.difficulty} name="difficulty" onChange={(event) => this.handleChange(event)}>
             <option value="Easy">Easy</option>
             <option value="Moderate">Moderate</option>
             <option value="Hard">Hard</option>
           </select>
-          <br></br>
-          Description: <input type="text" name="description" onChange={this.handleChange} value={this.state.description}/><br></br>
+          <label> Description: </label><input type="text" name="description" onChange={this.handleChange} value={this.state.description}/><br></br><br></br>
           <input type="submit"/>
         </form>
       </div>

@@ -11,10 +11,10 @@ const Hike = ({
 }) => (
   <div className="hike">
     <h3><Link to={`/hikes/${id}`}>{name}</Link></h3>
-    <p>Location: {location}</p>
-    <p>Difficulty: {difficulty}</p>
+    <p><label>Location: </label>{location}</p>
+    <p><label>Difficulty: </label>{difficulty}</p>
     {display==="single" &&
-      <p>Description: {description}</p>
+      <p><label>Description: </label>{description}</p>
     }
   </div>
 )
