@@ -18,10 +18,8 @@ componentDidMount() {
   render() {
     return (
       <div className="hikes-container"><br></br>
-        < HikeSearch /><br></br>
+        < HikeSearch />
         < Footer />
-        <h1>Hikes</h1>
-        <p>Click on a hike to see more</p>
         < VisibleHikes hikes={this.props.hikes} />
       </div>
     );
