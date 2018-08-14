@@ -21,7 +21,7 @@ const HikeShow = (props) => {
       {!props.hike.id &&
         <p>"Oops, we couldn't find that hike."</p>
       }
-      <Link to={`/hikes/${props.hike.id}/edit`}>Edit</Link>
+      <Link to={`/hikes/${props.hike.id}/edit`} className="editButton">Edit</Link>
       <span className="deleteButton" onClick={() => { if (window.confirm("Are you sure you want to delete this hike?")) handleDelete() }}>Delete</span>
     </div>
   )

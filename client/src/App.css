@@ -4,11 +4,14 @@
 }
 
 .App-header {
-  background-color: rgba(255,255,255,0.7);
+  /* background-color: rgba(255,255,255,0.7); */
+  background-color: rgb(47, 45, 43);
+  opacity: 0.95;
   height: 100px;
-  padding: 20px;
-  color: black;
-  border-radius: 10px;
+  padding: 10px 20px 60px 20px;
+  color: white;
+  text-align: left;
+  /* border-radius: 10px; */
 }
 
 .App-title {
@@ -32,17 +35,32 @@
 }
 
 .hikes-container .hike {
-  background-color: rgba(255,255,255,0.4);
-  border-radius: 10px;
+  background-color: rgba(255,255,255,0.6);
+  /* border-radius: 10px; */
 }
 
 .hikes-show-container {
-  background-color: rgba(255,255,255,0.4);
-  border-radius: 10px;
+  background-color: rgba(255,255,255,0.6);
+  /* border-radius: 10px; */
 }
 
 .hikes-show-container h3 a {
   font-size: 30px;
   color: black;
   text-decoration: none;
+}
+
+.editButton, .deleteButton {
+  border: 1.5px solid rgb(47, 45, 43);
+  /* background: rgb(47, 45, 43); */
+  color: rgb(47, 45, 43);
+  font-size: 0.75em;
+  padding: 3px;
+  margin: 5px;
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+a:hover {
+
 }
