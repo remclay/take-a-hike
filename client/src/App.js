@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/NavBar'
-import HikesContainer from './components/HikesContainer'
-import HikeForm from './components/HikeForm'
-import HikeUpdateForm from './components/HikeUpdateForm'
+import HikesContainer from './containers/HikesContainer'
+import HikeForm from './containers/HikeForm'
+import HikeUpdateForm from './containers/HikeUpdateForm'
 import HikeShow from './components/HikeShow'
 import Home from './components/Home'
 

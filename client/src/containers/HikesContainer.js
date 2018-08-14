@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/hikeActions';
-import VisibleHikes from '../containers/VisibleHikes';
+import VisibleHikes from './VisibleHikes';
 import HikeForm from './HikeForm';
-import HikeSearch from './HikeSearch';
-import Footer from './Footer';
+import HikeSearch from '../components/HikeSearch';
+import Footer from '../components/Footer';
 
 
 class HikesContainer extends Component {
