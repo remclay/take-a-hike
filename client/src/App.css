@@ -39,8 +39,9 @@
   /* border-radius: 10px; */
 }
 
-.hikes-show-container {
+.hikes-show-container, .home-container, .new-hike-container, .update-hike-container {
   background-color: rgba(255,255,255,0.6);
+  padding: 10px 0;
   /* border-radius: 10px; */
 }
 
@@ -61,6 +62,21 @@
   text-decoration: none;
 }
 
-a:hover {
+a {
+  color: black;
+}
 
+a:hover {
+  color: rgb(47, 45, 43);
+}
+
+.filter-container, .search-container {
+  background-color: rgba(255,255,255,0.6);
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+}
+
+label {
+  font-weight: bold;
 }
