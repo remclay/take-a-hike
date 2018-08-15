@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { searchHikes } from '../actions/hikeActions';
-import Hikes from './Hikes';
+// import { searchHikes } from '../actions/hikeActions';
+import { setQuery } from '../actions/hikeActions';
 
 class HikeSearch extends React.Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class HikeSearch extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
     console.log(this.state.searchTerm)
-    this.props.searchHikes(this.state.searchTerm);
+    this.props.setQuery(this.state.searchTerm);
   }
 
   render() {
@@ -50,7 +50,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {searchHikes: bindActionCreators(searchHikes, dispatch)}
+  return {setQuery: bindActionCreators(setQuery, dispatch)}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HikeSearch);
