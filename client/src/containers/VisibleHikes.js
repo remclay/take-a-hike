@@ -6,7 +6,7 @@ const getVisibleHikes = (hikes, filter, query) => {
   // debugger
   let matchedHikes = hikes.hikes
   if (query !== '') {
-    matchedHikes = matchedHikes.filter((el) => (el.name.toLowerCase().includes(query.toLowerCase())))
+    matchedHikes = matchedHikes.filter((el) => (el.name.toLowerCase().includes(query.toLowerCase())) || (el.location.toLowerCase().includes(query.toLowerCase())))
   }
   if (filter === "SHOW_ALL") {
     return matchedHikes
