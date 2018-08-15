@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/hikeActions';
 import VisibleHikes from './VisibleHikes';
-import HikeForm from './HikeForm';
 import HikeSearch from '../components/HikeSearch';
 import Footer from '../components/Footer';
 

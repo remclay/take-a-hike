@@ -1,8 +1,5 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import HikeSearch from './HikeSearch';
 
 // later move to css file
 const link = {
