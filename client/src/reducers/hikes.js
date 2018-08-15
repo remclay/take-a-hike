@@ -4,10 +4,10 @@ function hikesReducer(state = {loading: false, hikes: []}, action) {
       return {...state, loading: true}
     case 'FETCH_HIKES':
       return {...state, hikes: action.payload};
-    case 'SEARCH_HIKES':
-      const term = action.payload
-      const filteredHikes = state.hikes.filter((el) => (el.name.toLowerCase().includes(term.toLowerCase())))
-      return {loading: false, hikes: filteredHikes}
+    // case 'SEARCH_HIKES':
+    //   const term = action.payload
+    //   const filteredHikes = state.hikes.filter((el) => (el.name.toLowerCase().includes(term.toLowerCase())))
+    //   return {loading: false, hikes: filteredHikes}
     case 'ADD_HIKE':
       const hike = action.payload
       return {loading: false, hikes: [...state.hikes, hike]}

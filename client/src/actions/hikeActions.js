@@ -12,12 +12,12 @@ export function fetchHikes() {
   }
 }
 
-export function searchHikes(searchTerm) {
-  return {
-    type: "SEARCH_HIKES",
-    payload: searchTerm
-  }
-}
+// export function searchHikes(searchTerm) {
+//   return {
+//     type: "SEARCH_HIKES",
+//     payload: searchTerm
+//   }
+// }
 
 export function addHike(hike) {
   return (dispatch) => {
@@ -71,6 +71,13 @@ export function deleteHike(hike) {
    }
   )
  }
+}
+
+export function setQuery(query) {
+  return {
+    type: "SET_QUERY",
+    query
+  }
 }
 
 export function setVisibilityFilter(filter) {
