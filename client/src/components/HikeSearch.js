@@ -5,19 +5,19 @@ import { bindActionCreators } from 'redux';
 import { setQuery } from '../actions/hikeActions';
 
 class HikeSearch extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchTerm: ''
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     searchTerm: ''
+  //   };
+  // }
 
   handleChange = event => {
-    this.setState({
-      searchTerm: event.target.value
-    }, () => {
-      this.props.setQuery(this.state.searchTerm);
-    });
+//     this.setState({
+//       searchTerm: event.target.value
+// }, () => {
+      this.props.setQuery(event.target.value);
+    // });
   }
 
   handleSubmit = event => {
@@ -28,6 +28,7 @@ class HikeSearch extends React.Component {
   }
 
   render() {
+
     return (
       <div className="search-container">
         <div className="search-form">
@@ -37,7 +38,7 @@ class HikeSearch extends React.Component {
             className='searchTerm'
             type='text'
             placeholder='Search hikes...'
-            value={this.state.searchTerm}
+            value={this.props.query}
             onChange={this.handleChange}
           />
           </form>
@@ -47,9 +48,9 @@ class HikeSearch extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {hikes: state.hikes.hikes}
-}
+const mapStateToProps = state => ({
+  query: state.queryFilter
+})
 
 const mapDispatchToProps = (dispatch) => {
   return {setQuery: bindActionCreators(setQuery, dispatch)}
