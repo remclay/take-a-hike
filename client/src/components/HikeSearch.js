@@ -15,13 +15,16 @@ class HikeSearch extends React.Component {
   handleChange = event => {
     this.setState({
       searchTerm: event.target.value
+    }, () => {
+      this.props.setQuery(this.state.searchTerm);
     });
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state.searchTerm)
-    this.props.setQuery(this.state.searchTerm);
+  //   console.log(this.state.searchTerm)
+  //   this.props.setQuery(this.state.searchTerm);
+  //   this.setState({searchTerm: ''});
   }
 
   render() {
@@ -29,7 +32,7 @@ class HikeSearch extends React.Component {
       <div className="search-container">
         <div className="search-form">
         <form onSubmit={this.handleSubmit}>
-          <label>Search by name: </label>
+          <label>Search by name or location: </label>
           <input
             className='searchTerm'
             type='text'
@@ -37,7 +40,6 @@ class HikeSearch extends React.Component {
             value={this.state.searchTerm}
             onChange={this.handleChange}
           />
-          <button type="submit">Go</button>
           </form>
         </div>
       </div>
