@@ -13,16 +13,20 @@ const HikeShow = (props) => {
 
   return (
     <div className="hikes-show-container">
-      < Hike
-        key={props.hike.id}
-        {...props.hike}
-        display="single"
-      />
-      {!props.hike.id &&
-        <p>"Oops, we couldn't find that hike."</p>
+      { props.hike.id &&
+      <div>
+        < Hike
+          key={props.hike.id}
+          {...props.hike}
+          display="single"
+        />
+        <Link to={`/hikes/${props.hike.id}/edit`} className="editButton">Edit</Link>
+        <span className="deleteButton" onClick={() => { if (window.confirm("Are you sure you want to delete this hike?")) handleDelete() }}>Delete</span>
+      </div>
       }
-      <Link to={`/hikes/${props.hike.id}/edit`} className="editButton">Edit</Link>
-      <span className="deleteButton" onClick={() => { if (window.confirm("Are you sure you want to delete this hike?")) handleDelete() }}>Delete</span>
+      { !props.hike.id &&
+        <h3>Oops, we couldn&apos;t find that hike.</h3>
+      }
     </div>
   )
 }
