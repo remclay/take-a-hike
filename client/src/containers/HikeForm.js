@@ -26,7 +26,6 @@ class HikeForm extends Component {
   };
 
   handleSubmit = event => {
-    debugger
     event.preventDefault();
     this.props.addHike(this.state);
     this.props.history.push('/hikes')
@@ -41,6 +40,7 @@ class HikeForm extends Component {
           <label>Name: </label><input type="text" name="name" onChange={this.handleChange} value={this.state.name}/>
           <label> Location: </label><input type="text" name="location" onChange={this.handleChange} value={this.state.location}/><br></br><br></br>
           <label>Difficulty: </label><select value={this.state.difficulty} name="difficulty" onChange={(event) => this.handleChange(event)}>
+            <option value="Placeholder">--</option>
             <option value="Easy">Easy</option>
             <option value="Moderate">Moderate</option>
             <option value="Hard">Hard</option>
