@@ -13,7 +13,7 @@ const NavBar = ({ onClick }) => (
 
 const mapDispatchToProps = (dispatch) => ({
   onClick: () => {
-    dispatch(setVisibilityFilter("SHOW_ALL")),
+    dispatch(setVisibilityFilter("SHOW_ALL"))
     dispatch(setQuery(''))
   }
 })
