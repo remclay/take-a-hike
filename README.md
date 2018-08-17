@@ -2,7 +2,7 @@
 
 Take-a-hike is a basic CRUD web application for hiking trails.
 
-Users can locate hikes, search via name or location, filter via difficulty and add/update/remove details of hikes they've been on, without needing to sign up.
+Users can browse hikes, search via name or location, filter via difficulty and add/update/remove details of hikes they've been on, without needing to sign up.
 
 <!-- ## Interaction
 
