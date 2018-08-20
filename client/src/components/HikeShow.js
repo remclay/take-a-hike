@@ -7,7 +7,7 @@ import { deleteHike } from '../actions/hikeActions';
 const HikeShow = (props) => {
 
   const handleDelete = () => {
-    props.deleteHike(props.hike)
+    props.deleteHike(props.hike);
     props.history.push('/hikes')
   }
 
