@@ -3,13 +3,29 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setVisibilityFilter, setQuery } from '../actions/hikeActions'
 
-const NavBar = ({ onClick }) => (
-  <div className="navigation">
-    <NavLink to="/" exact className="nav-link" activeClassName="active-nav-link">Home</NavLink>
-    <NavLink to="/hikes" exact className="nav-link" activeClassName="active-nav-link" onClick={onClick}>All hikes</NavLink>
-    <NavLink to="/hikes/new" exact className="nav-link" activeClassName="active-nav-link">New</NavLink>
-  </div>
-)
+class NavBar extends React.PureComponent {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    return (
+      <div className="navigation">
+        <NavLink exact to="/"  activeClassName="active-nav-link">Home</NavLink>
+        <NavLink exact to="/hikes" activeClassName="active-nav-link" onClick={this.props.onClick}>All hikes</NavLink>
+        <NavLink exact to="/hikes/new" activeClassName="active-nav-link">New</NavLink>
+      </div>
+
+    )
+  }
+}
+// const NavBar = ({ onClick }) => (
+//   <div className="navigation">
+//     <NavLink exact to="/" className="nav-link" activeClassName="active-nav-link">Home</NavLink>
+//     <NavLink exact to="/hikes" className="nav-link" activeClassName="active-nav-link" onClick={onClick}>All hikes</NavLink>
+//     <NavLink exact to="/hikes/new" className="nav-link" activeClassName="active-nav-link">New</NavLink>
+//   </div>
+// )
 
 const mapDispatchToProps = (dispatch) => ({
   onClick: () => {
