@@ -48,22 +48,25 @@
 }
 
 .editButton, .deleteButton {
-  border: 1.5px solid rgb(47, 45, 43);
-  /* background: rgb(47, 45, 43); */
-  color: rgb(47, 45, 43);
-  font-size: 0.75em;
-  padding: 3px;
-  margin: 5px;
-  border-radius: 2px;
+  display: inline-block;
+  border: 1px solid black;
+  box-shadow: 1px 2px 5px rgb(47, 45, 43);
+  background-color: rgba(255,255,255,0.4);
+  color: black;
+  font-size: 0.90em;
+  padding: 3px 7px;
+  margin: 0px 7px 10px 7px;
   text-decoration: none;
+  font-family: "Nunito Sans", sans-serif;
+  cursor: pointer;
+}
+
+.editButton:hover, .deleteButton:hover, .nav-link:hover {
+  box-shadow: 1.5px 2.5px 2px rgb(47, 45, 43);
 }
 
 a {
   color: black;
-}
-
-a:hover {
-  color: rgb(47, 45, 43);
 }
 
 .filter-container, .search-container {
