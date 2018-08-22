@@ -2,21 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Hike from './Hike';
-import { bindActionCreators } from 'redux';
-// import { deleteHike } from '../actions/hikeActions';
-import * as actions from '../actions/hikeActions';
+import { deleteHike, fetchHikes } from '../actions/hikeActions';
 
 class HikeShow extends React.Component {
 
   componentDidMount() {
     if (!this.props.hikes.length) {
-      console.log("I'm fetching Hikes")
-      this.props.actions.fetchHikes()
+      console.log("Fetching hikes")
+      this.props.fetchHikes()
     }
   }
 
   handleDelete = () => {
-    this.props.actions.deleteHike(this.props.hike);
+    this.props.deleteHike(this.props.hike);
     this.props.history.push('/hikes')
   }
 
@@ -45,20 +43,10 @@ class HikeShow extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   const selectedHike = state.hikes.hikes.find(h => h.id === parseInt(ownProps.match.params.id, 10));
   if (selectedHike) {
-    return {
-      hikes: state.hikes.hikes,
-      hike: selectedHike
-    }
+    return { hikes: state.hikes.hikes, hike: selectedHike }
   } else {
-    return {
-      hikes: state.hikes.hikes,
-      hike: {}
-    }
+    return { hikes: state.hikes.hikes, hike: {} }
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {actions: bindActionCreators(actions, dispatch)}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(HikeShow);
+export default connect(mapStateToProps, { fetchHikes, deleteHike })(HikeShow);
