@@ -4,9 +4,6 @@ import { connect } from 'react-redux';
 import { setVisibilityFilter, setQuery } from '../actions/hikeActions'
 
 class NavBar extends React.PureComponent {
-  constructor(props) {
-    super(props)
-  }
 
   render() {
     return (
