@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as actions from '../actions/hikeActions';
+import { fetchHikes } from '../actions/hikeActions';
 import VisibleHikes from './VisibleHikes';
 import HikeSearch from '../components/HikeSearch';
 import Footer from '../components/Footer';
@@ -9,10 +8,10 @@ import Footer from '../components/Footer';
 
 class HikesContainer extends Component {
 
-componentDidMount() {
-  console.log("HC mounted!")
-  this.props.actions.fetchHikes()
-}
+  componentDidMount() {
+    console.log("HC mounted!")
+    this.props.fetchHikes()
+  }
 
   render() {
     return (
@@ -31,8 +30,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {actions: bindActionCreators(actions, dispatch)}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(HikesContainer);
+export default connect(mapStateToProps, { fetchHikes })(HikesContainer);
