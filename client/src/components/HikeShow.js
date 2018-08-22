@@ -14,10 +14,11 @@ class HikeShow extends React.Component {
   }
 
   handleDelete = (event) => {
-    window.confirm("Are you sure you want to delete this hike?")
-    this.props.deleteHike(this.props.hike);
-    console.log("Hike deleted")
-    this.props.history.push('/hikes');
+    if (window.confirm("Are you sure you want to delete this hike?")) {
+      this.props.deleteHike(this.props.hike);
+      console.log("Hike deleted")
+      this.props.history.push('/hikes');
+    }
   }
 
   render() {
@@ -31,7 +32,7 @@ class HikeShow extends React.Component {
             display="single"
           />
           <Link to={`/hikes/${this.props.hike.id}/edit`} className="editButton">Edit</Link>
-          <span className="deleteButton" onClick={this.handleDelete}>Delete</span>
+          <button className="deleteButton" onClick={this.handleDelete}>Delete</button>
         </div>
         }
         { !this.props.hike.id &&
