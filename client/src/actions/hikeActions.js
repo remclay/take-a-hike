@@ -9,6 +9,7 @@ export function fetchHikes() {
     .then(responseJSON => {const hikes = responseJSON;
       return (dispatch({type: 'FETCH_HIKES', payload: hikes}))
     })
+    .catch(error => console.error(error));
   }
 }
 
@@ -34,6 +35,7 @@ export function addHike(hike) {
     .then(responseJSON => {const hike = responseJSON;
       return (dispatch({type: 'ADD_HIKE', payload: hike}))
     })
+    .catch(error => console.error(error));
   }
 }
 
@@ -57,9 +59,9 @@ export function updateHike(hike) {
 
 export function deleteHike(hike) {
  return (dispatch) => {
-  dispatch({type: 'DELETE_HIKE',
-  payload: hike
-  })
+  // dispatch({type: 'DELETE_HIKE',
+  // payload: hike
+  // })
    dispatch({type: 'LOADING_HIKES'});
    return fetch(`/hikes/${hike.id}`, {
      method: 'DELETE',
