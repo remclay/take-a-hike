@@ -1,4 +1,4 @@
-function hikesReducer(state = {loading: false, hikes: []}, action) {
+function hikesReducer(state = {loading: false, hikes: [], errors: ""}, action) {
   switch (action.type) {
     case 'LOADING_HKES':
       return {...state, loading: true}
@@ -8,9 +8,12 @@ function hikesReducer(state = {loading: false, hikes: []}, action) {
     //   const term = action.payload
     //   const filteredHikes = state.hikes.filter((el) => (el.name.toLowerCase().includes(term.toLowerCase())))
     //   return {loading: false, hikes: filteredHikes}
-    case 'ADD_HIKE':
+    case 'ADD_HIKE_SUCCESS':
       const hike = action.payload
-      return {loading: false, hikes: [...state.hikes, hike]}
+      return {loading: false, hikes: [...state.hikes, hike], errors: []}
+      debugger
+    case 'ADD_HIKE_FAILURE':
+      return {...state, errors: [...state.errors, action.message]}
     case 'UPDATE_HIKE':
       const hikeDetails = action.payload;
       const toUpdate = state.hikes.find(el => el.id === hikeDetails.id)
