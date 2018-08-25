@@ -18,7 +18,7 @@ class HikesController < ApplicationController
     if @hike.save
       render json: @hike
     else
-      render json: @hike.errors
+      render json: {status: "error", message: @hike.errors}
     end
   end
 
