@@ -32,10 +32,18 @@ export function addHike(hike) {
       body: JSON.stringify(hike)
     })
     .then(response => response.json())
-    .then(responseJSON => {const hike = responseJSON;
-      return (dispatch({type: 'ADD_HIKE', payload: hike}))
+    .then(responseJSON => {
+      if (responseJSON.status !== "error") {
+        const hike = responseJSON;
+        return (dispatch({
+        type: 'ADD_HIKE_SUCCESS',
+        payload: hike
+        }));
+      }
+      else {
+        dispatch({type: 'ADD_HIKE_FAILURE', message: responseJSON.message || "Hike was not added."});
+      };
     })
-    .catch(error => console.error(error));
   }
 }
 
