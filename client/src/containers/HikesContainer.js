@@ -4,6 +4,7 @@ import { fetchHikes } from '../actions/hikeActions';
 import VisibleHikes from './VisibleHikes';
 import HikeSearch from '../components/HikeSearch';
 import Footer from '../components/Footer';
+import Errors from '../components/Errors';
 
 
 class HikesContainer extends Component {
@@ -15,10 +16,22 @@ class HikesContainer extends Component {
 
   render() {
     return (
-      <div className="hikes-container"><br></br>
-        < HikeSearch />
-        < Footer />
-        < VisibleHikes hikes={this.props.hikes} />
+      <div>
+
+      {this.props.errors.length === 0 &&
+        <div className="hikes-container"><br></br>
+          < HikeSearch />
+          < Footer />
+          < VisibleHikes hikes={this.props.hikes} />
+        </div>
+      }
+
+        {this.props.errors.length > 0 &&
+          <div className="errors-container">
+            < Errors messages={this.props.errors[0]}/>
+          </div>
+        }
+
       </div>
     );
   }
@@ -26,7 +39,8 @@ class HikesContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    hikes: state.hikes.hikes
+    hikes: state.hikes.hikes,
+    errors: state.hikes.errors
   }
 }
 
