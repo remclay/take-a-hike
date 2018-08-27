@@ -1,9 +1,9 @@
 function hikesReducer(state = {loading: false, hikes: [], errors: []}, action) {
   switch (action.type) {
     case 'LOADING_HKES':
-      return {...state, errors: [], loading: true}
+      return {...state, loading: true}
     case 'FETCH_HIKES':
-      return {...state, errors: [], hikes: action.payload};
+      return {...state, hikes: action.payload};
     // case 'SEARCH_HIKES':
     //   const term = action.payload
     //   const filteredHikes = state.hikes.filter((el) => (el.name.toLowerCase().includes(term.toLowerCase())))
@@ -21,7 +21,9 @@ function hikesReducer(state = {loading: false, hikes: [], errors: []}, action) {
     case 'DELETE_HIKE':
       // pass id to action
       const newHikes = state.hikes.filter(el => el.id !== action.payload)
-      return {loading: false, errors: [], hikes: newHikes}
+      return {loading: false, hikes: newHikes}
+    case 'CLEAR_ERRORS':
+      return {...state, errors: []}
     default:
       return state
   }

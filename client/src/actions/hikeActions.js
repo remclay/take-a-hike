@@ -83,6 +83,12 @@ export function deleteHike(hike) {
  }
 }
 
+export function clearErrors() {
+  return {
+    type: "CLEAR_ERRORS"
+  }
+}
+
 export function setQuery(query) {
   return {
     type: "SET_QUERY",
