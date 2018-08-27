@@ -5,30 +5,17 @@ import { bindActionCreators } from 'redux';
 import { setQuery } from '../actions/hikeActions';
 
 class HikeSearch extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     searchTerm: ''
-  //   };
-  // }
+
 
   handleChange = event => {
-//     this.setState({
-//       searchTerm: event.target.value
-// }, () => {
-      this.props.setQuery(event.target.value);
-    // });
+    this.props.setQuery(event.target.value);
   }
 
   handleSubmit = event => {
     event.preventDefault();
-  //   console.log(this.state.searchTerm)
-  //   this.props.setQuery(this.state.searchTerm);
-  //   this.setState({searchTerm: ''});
   }
 
   render() {
-
     return (
       <div className="search-container">
         <div className="search-form">
