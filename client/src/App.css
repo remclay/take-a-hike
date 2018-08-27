@@ -92,3 +92,27 @@ label {
 .active-nav-link {
   text-decoration: underline;
 }
+
+@media screen and (max-width: 550px) {
+  .App {
+    font-size: 0.8em;
+  }
+  .App-header {
+    height: 80px;
+  }
+  .App-title {
+    font-size: 2.0em;
+    }
+  .App-intro {
+    font-size: 0.9em;
+  }
+  .hikes-container .hikes {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .hikes-container .hikes {
+    grid-template-columns: 1fr;
+  }
+}
