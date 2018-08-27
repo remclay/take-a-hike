@@ -3,7 +3,6 @@ import Hikes from '../components/Hikes'
 // import { VisibilityFilters } from '../actions/hikeActions'
 
 const getVisibleHikes = (hikes, filter, query) => {
-  // debugger
   let matchedHikes = hikes.hikes
   if (query !== '') {
     matchedHikes = matchedHikes.filter((el) => (el.name.toLowerCase().includes(query.toLowerCase())) || (el.location.toLowerCase().includes(query.toLowerCase())))

@@ -17,21 +17,19 @@ class HikesContainer extends Component {
   render() {
     return (
       <div>
-
-      {this.props.errors.length === 0 &&
-        <div className="hikes-container"><br></br>
-          < HikeSearch />
-          < Footer />
-          < VisibleHikes hikes={this.props.hikes} />
-        </div>
-      }
+        {this.props.errors.length === 0 &&
+          <div className="hikes-container"><br></br>
+            < HikeSearch />
+            < Footer />
+            < VisibleHikes hikes={this.props.hikes} />
+          </div>
+        }
 
         {this.props.errors.length > 0 &&
           <div className="errors-container">
             < Errors messages={this.props.errors[0]}/>
           </div>
         }
-
       </div>
     );
   }

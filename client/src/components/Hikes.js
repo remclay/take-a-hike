@@ -5,10 +5,7 @@ const Hikes = ({ hikes }) => (
   <div>
     <div className="hikes">
       {hikes.map(hike =>
-        <Hike
-          key={hike.id}
-          {...hike}
-        />
+        <Hike key={hike.id} {...hike} />
       )}
     </div>
 

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
-// import * as actions from '../actions/hikeActions';
 import { updateHike } from '../actions/hikeActions';
 
 class HikeUpdateForm extends Component {
