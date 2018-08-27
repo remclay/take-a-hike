@@ -76,6 +76,10 @@ a {
   margin-bottom: 10px;
 }
 
+.filter-container button {
+  margin-left: 4px;
+}
+
 label {
   font-weight: bold;
 }
