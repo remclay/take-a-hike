@@ -1,24 +1,27 @@
 import React from 'react'
 
-const Error = ({ prop, message }) => {
-
+const Error = ({ prop, message}) => {
   return (
     <li>
-    {prop}: {message}
+      <strong>{prop}</strong> {message}
     </li>
   );
-}
+};
 
 const Errors = ({ messages }) => {
-  const errors = for (const prop in messages) {
-    <Error prop={prop} message={messages[prop]} />
+  let errors = []
+  for (const prop in messages) {
+    errors.push(< Error prop={prop} key={prop} message={messages[prop]} />);
   }
 
   return (
     <div className="error-container">
-      <p>The hike was not added, due to the following errors:</p>
+      <h1>Oops!</h1>
+      <p>The hike was not added, due to the following error(s):</p>
       <div className="errors">
-      {errors}
+        <ul>
+          {errors}
+        </ul>
       </div>
     </div>
   );
