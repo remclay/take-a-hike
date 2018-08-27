@@ -1,5 +1,5 @@
-// import fetch from 'cross-fetch'
-import fetch from 'isomorphic-fetch';
+import fetch from 'cross-fetch';
+// import fetch from 'isomorphic-fetch';
 
 export function fetchHikes() {
   return (dispatch) => {
