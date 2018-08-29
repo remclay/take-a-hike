@@ -33,17 +33,19 @@ export function addHike(hike, history) {
     })
     .then(response => response.json())
     .then(responseJSON => {
-      console.log('D')
       if (responseJSON.status !== "error") {
         const hike = responseJSON;
         return (dispatch({
         type: 'ADD_HIKE_SUCCESS',
         payload: hike
-      }), history.push('/hikes'));
+      }), history.push(`/hikes/${hike.id}`));
       }
       else {
-        dispatch({type: 'ADD_HIKE_FAILURE', message: responseJSON.message || "Hike was not added."});
-      };
+        return (dispatch({
+          type: 'ADD_HIKE_FAILURE',
+          message: responseJSON.message || "Hike was not added."
+        }), history.push(`/hikes`));
+      }
     })
   }
 }
@@ -76,9 +78,11 @@ export function deleteHike(hike, history) {
        'Content-Type': "application/json",
      },
      body: JSON.stringify(hike)
-   }
- ), history.push('/hikes')
- }
+   })
+   .then(response => {
+     return history.push('/hikes')
+   })
+  }
 }
 
 export function clearErrors() {
