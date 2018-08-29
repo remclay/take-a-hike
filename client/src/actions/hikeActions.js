@@ -20,7 +20,7 @@ export function fetchHikes() {
 //   }
 // }
 
-export function addHike(hike) {
+export function addHike(hike, history) {
   return (dispatch) => {
     dispatch({type: 'LOADING_HIKES'});
     return fetch('/hikes', {
@@ -33,12 +33,13 @@ export function addHike(hike) {
     })
     .then(response => response.json())
     .then(responseJSON => {
+      console.log('D')
       if (responseJSON.status !== "error") {
         const hike = responseJSON;
         return (dispatch({
         type: 'ADD_HIKE_SUCCESS',
         payload: hike
-        }));
+      }), history.push('/hikes'));
       }
       else {
         dispatch({type: 'ADD_HIKE_FAILURE', message: responseJSON.message || "Hike was not added."});

@@ -12,9 +12,6 @@ class HikeForm extends Component {
       difficulty: '',
       description: ''
     };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange = event => {
@@ -22,14 +19,12 @@ class HikeForm extends Component {
     this.setState({
       [name]: value
     });
-    console.log(this.state)
+    //console.log(this.state)
   };
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.addHike(this.state);
-    this.props.history.push('/hikes')
-    // change redirect to hikes/:id?
+    this.props.addHike(this.state, this.props.history);
   }
 
   render() {
