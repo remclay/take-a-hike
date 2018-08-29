@@ -15,9 +15,8 @@ class HikeShow extends React.Component {
 
   handleDelete = (event) => {
     if (window.confirm("Are you sure you want to delete this hike?")) {
-      this.props.deleteHike(this.props.hike);
+      this.props.deleteHike(this.props.hike, this.props.history);
       console.log("Hike deleted")
-      this.props.history.push('/hikes');
     }
   }
 

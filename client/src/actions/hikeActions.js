@@ -66,11 +66,8 @@ export function updateHike(hike) {
   }
 }
 
-export function deleteHike(hike) {
+export function deleteHike(hike, history) {
  return (dispatch) => {
-  // dispatch({type: 'DELETE_HIKE',
-  // payload: hike
-  // })
    dispatch({type: 'LOADING_HIKES'});
    return fetch(`/hikes/${hike.id}`, {
      method: 'DELETE',
@@ -80,7 +77,7 @@ export function deleteHike(hike) {
      },
      body: JSON.stringify(hike)
    }
-  )
+ ), history.push('/hikes')
  }
 }
 
