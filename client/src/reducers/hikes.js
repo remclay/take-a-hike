@@ -21,7 +21,7 @@ function hikesReducer(state = {loading: false, hikes: [], errors: []}, action) {
     case 'DELETE_HIKE':
       // pass id to action
       const newHikes = state.hikes.filter(el => el.id !== action.payload)
-      return {loading: false, hikes: newHikes}
+      return {loading: false, errors: [], hikes: newHikes}
     case 'CLEAR_ERRORS':
       return {...state, errors: []}
     default:
