@@ -17,6 +17,7 @@ class HikesContainer extends Component {
   render() {
     return (
       <div>
+
         {this.props.errors.length === 0 &&
           <div className="hikes-container"><br></br>
             < HikeSearch />
@@ -27,7 +28,7 @@ class HikesContainer extends Component {
 
         {this.props.errors.length > 0 &&
           <div className="errors-container">
-            < Errors messages={this.props.errors[0]}/>
+            < Errors messages={this.props.errors[0]} />
           </div>
         }
       </div>
@@ -38,6 +39,7 @@ class HikesContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     hikes: state.hikes.hikes,
+    loading: state.hikes.loading,
     errors: state.hikes.errors
   }
 }
