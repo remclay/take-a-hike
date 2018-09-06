@@ -12,9 +12,6 @@ class HikeUpdateForm extends Component {
       difficulty: this.props.hike.difficulty,
       description: this.props.hike.description
     };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange = event => {

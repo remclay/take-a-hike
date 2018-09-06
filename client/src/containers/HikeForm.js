@@ -19,7 +19,6 @@ class HikeForm extends Component {
     this.setState({
       [name]: value
     });
-    //console.log(this.state)
   };
 
   handleSubmit = event => {
