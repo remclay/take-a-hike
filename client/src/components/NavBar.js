@@ -8,9 +8,9 @@ class NavBar extends React.PureComponent {
   render() {
     return (
       <div className="navigation">
-        <NavLink exact to="/" className="nav-link" activeClassName="active-nav-link">Home</NavLink>
-        <NavLink exact to="/hikes" className="nav-link" activeClassName="active-nav-link" onClick={this.props.onClick}>All hikes</NavLink>
-        <NavLink exact to="/hikes/new" className="nav-link" activeClassName="active-nav-link" onClick={this.props.onClickNew}>New</NavLink>
+        <NavLink exact to="/" className="nav-link">Home</NavLink>
+        <NavLink exact to="/hikes" className="nav-link" onClick={this.props.onClick}>All hikes</NavLink>
+        <NavLink exact to="/hikes/new" className="nav-link" onClick={this.props.onClickNew}>New</NavLink>
       </div>
     )
   }
