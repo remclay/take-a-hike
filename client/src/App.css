@@ -93,10 +93,6 @@ label {
   color: black;
 }
 
-.active-nav-link {
-  text-decoration: underline;
-}
-
 @media screen and (max-width: 550px) {
   .App {
     font-size: 0.8em;
