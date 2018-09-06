@@ -15,20 +15,26 @@ class HikesContainer extends Component {
   }
 
   render() {
+    const { hikes, loading, errors } = this.props;
+
     return (
       <div>
-        {this.props.errors.length === 0 &&
+        {errors.length === 0 &&
           <div className="hikes-container"><br></br>
             < HikeSearch />
             < Footer />
-            < VisibleHikes hikes={this.props.hikes} />
+
+            {loading &&
+              <h3 className="loading">Loading...</h3>
+            }
+            {!loading &&
+              < VisibleHikes hikes={hikes} />
+            }
           </div>
         }
 
-        {this.props.errors.length > 0 &&
-          <div className="errors-container">
-            < Errors messages={this.props.errors[0]} />
-          </div>
+        {errors.length > 0 &&
+          < Errors messages={errors[0]} />
         }
       </div>
     );
