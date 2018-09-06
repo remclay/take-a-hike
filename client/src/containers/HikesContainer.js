@@ -10,7 +10,7 @@ import Errors from '../components/Errors';
 class HikesContainer extends Component {
 
   componentDidMount() {
-    console.log("HC mounted!")
+    // console.log("HC mounted!")
     this.props.fetchHikes()
   }
 
