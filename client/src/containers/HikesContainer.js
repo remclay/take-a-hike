@@ -17,7 +17,6 @@ class HikesContainer extends Component {
   render() {
     return (
       <div>
-
         {this.props.errors.length === 0 &&
           <div className="hikes-container"><br></br>
             < HikeSearch />
