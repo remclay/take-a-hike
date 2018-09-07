@@ -4,9 +4,9 @@ Take-a-hike is a basic CRUD web application for hiking trails.
 
 Users can browse hikes, search via name or location, filter via difficulty and add/update/remove details of hikes they've been on, without needing to sign up.
 
-<!-- ## Interaction
+## Interaction
 
-View and interact with this site at // heroku site. -->
+View and interact with this site on heroku at https://take-a-hike-co.herokuapp.com/
 
 ## Installation
 
