@@ -11,7 +11,9 @@
     "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
   },
   "dependencies": {
+    "cross-fetch": "^2.2.2",
     "express": "4.16.3",
-    "foobar": "^1.1.0"
+    "foobar": "^1.1.0",
+    "react-router-dom": "^4.4.0-alpha.1"
   }
 }
