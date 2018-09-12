@@ -9,11 +9,13 @@ function hikesReducer(state = {loading: true, hikes: [], errors: []}, action) {
       return {loading: false, errors: [], hikes: [...state.hikes, hike]}
     case 'ADD_HIKE_FAILURE':
       return {...state, errors: [...state.errors, action.message]}
-    case 'UPDATE_HIKE':
+    case 'UPDATE_HIKE_SUCCESS':
       const hikeDetails = action.payload;
       const toUpdate = state.hikes.find(el => el.id === hikeDetails.id)
       const index = state.hikes.indexOf(toUpdate)
       return {loading: false, errors: [], hikes: [...state.hikes.slice(0, index), hikeDetails, ...state.hikes.slice(index + 1)]}
+    case 'UPDATE_HIKE_FAILURE':
+      return {...state, loading: false, errors: [...state.errors, action.message]}
     case 'CLEAR_ERRORS':
       return {...state, errors: []}
     default:
