@@ -32,8 +32,7 @@ export function addHike(hike, history) {
         type: 'ADD_HIKE_SUCCESS',
         payload: hike
       }), history.push(`/hikes/${hike.id}`));
-      }
-      else {
+      } else {
         return (dispatch({
           type: 'ADD_HIKE_FAILURE',
           message: responseJSON.message || "Hike was not added."
@@ -43,7 +42,7 @@ export function addHike(hike, history) {
   }
 }
 
-export function updateHike(hike) {
+export function updateHike(hike, history) {
   return (dispatch) => {
     dispatch({type: 'LOADING_HIKES'});
     return fetch(`/hikes/${hike.id}`, {
@@ -55,8 +54,22 @@ export function updateHike(hike) {
       body: JSON.stringify(hike)
     })
     .then(response => response.json())
-    .then(responseJSON => {const hike = responseJSON;
-      return (dispatch({type: 'UPDATE_HIKE', payload: hike}))
+    .then(responseJSON => {
+      console.log(responseJSON)
+      if (responseJSON.state !== "error") {
+        const hike = responseJSON;
+        console.log("success")
+        return (dispatch({
+          type: 'UPDATE_HIKE_SUCCESS',
+          payload: hike
+        }), history.push(`/hikes/${hike.id}`))
+      } else {
+        console.log("oops")
+        return (dispatch({
+          type: 'UPDATE_HIKE_FAILURE',
+          message: responseJSON.message || "Hike was not updated."
+        }), history.push(`/hikes`));
+      }
     })
   }
 }
