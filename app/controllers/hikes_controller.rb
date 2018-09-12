@@ -1,3 +1,5 @@
+require 'pry'
+
 class HikesController < ApplicationController
   before_action :set_hike, only: [:show, :update, :destroy]
 
@@ -19,16 +21,19 @@ class HikesController < ApplicationController
       render json: @hike
     else
       render json: {status: "error", message: @hike.errors}
+      binding.pry
     end
   end
 
   # PUT/PATCH /hikes/:id/edit
   def update
-    @hike.update_attributes(hike_params)
+    @hike.update(hike_params)
     if @hike.save
       render json: @hike
+      binding.pry
     else
-      render json: @hike.errors
+      render json: {status: "error", message: @hike.errors}
+      binding.pry
     end
   end
 
@@ -47,6 +52,6 @@ class HikesController < ApplicationController
     end
 
     def hike_params
-      params.require(:hike).permit(:name, :location, :difficulty, :description)
+      params.require(:hike).permit(:id, :name, :location, :difficulty, :description)
     end
 end
