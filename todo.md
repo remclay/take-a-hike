@@ -4,6 +4,5 @@ Functionality:
 - add User model, including authentication and authorization;
 - add Comments/Reviews model;
 - style NavLink differently when 'active';
-- display 'loading' bar when fetch in progress (NB already began implementing in action creator and reducer, need to display in component);
 - potentially order hikes via updated_at;
 - refactor components for consistency;
